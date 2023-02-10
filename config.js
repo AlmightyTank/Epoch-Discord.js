@@ -1,8 +1,8 @@
 
 module.exports = {
-    botClientID: "YOUR_BOT_ID",
+    botClientID: "1070167154764283974",
     botPrefix: "!",
-    ownerID: "YOUR_ID",
-    embedColor: "#00dbff",
-    embedfooterText: "Discord.js v13 Example by Expectatives#1157"
+    ownerID: "613545019663712261",
+    embedColor: "#6abc43",
+    embedfooterText: "Epoch bot by AlmightyTank"
 }

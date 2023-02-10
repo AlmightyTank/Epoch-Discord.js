@@ -1,25 +1,33 @@
 {
-  "name": "discord.js-v13-example",
+  "name": "epochbot",
   "version": "1.0.0",
-  "description": "Discord.js v13 Example Bot by Expectatives#1157",
+  "description": "EpochBot by AlMightyTank#6286",
   "main": "index.js",
-  "author": "Expectatives#1157",
+  "author": "AlMightyTank#6286",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon src/commands/slash/Utility/epoch.js"
   },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
-    "discord.js": "^13.3.1",
-    "dotenv": "^10.0.0",
-    "glob": "^7.2.0",
+    "@discordjs/builders": "^1.4.0",
+    "@discordjs/collection": "^1.3.0",
     "chalk": "^4.1.0",
-    "fs": "^0.0.1-security"
+    "discord.js": "^13.12.0",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "glob": "^7.2.0",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.40"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Expectatives/Discord.js-v13-Example.git"
+    "url": "git+https://github.com/ChrisYoungPlus/Epoch-Discord.js.git"
   },
-  "bugs": "https://github.com/Expectatives/Discord.js-v13-Example/issues",
-  "homepage": "https://github.com/Expectatives/Discord.js-v13-Example#readme"
+  "bugs": {
+    "url": "https://github.com/ChrisYoungPlus/Epoch-Discord.js/issues"
+  },
+  "homepage": "https://github.com/ChrisYoungPlus/Epoch-Discord.js#readme",
+  "devDependencies": {}
 }
