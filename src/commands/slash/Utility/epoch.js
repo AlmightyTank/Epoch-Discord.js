@@ -38,7 +38,7 @@ module.exports = {
         const timezoneInt = interaction.options.getString("timezone");
 
 
-        if (!timeInt==null || !timeInt=="") {
+        if (!dateInt==null || !dateInt=="") {
 
             parseInt(timeInt);
             parseInt(dateInt);
@@ -65,37 +65,35 @@ module.exports = {
 
             // This is what it commands when using the command without arguments
             let epochCmdEmbed = new client.discord.MessageEmbed()
-                .setTitle(`${client.user.username} Epoch Time Converter Command`)
+                .setTitle(`${client.user.username} Time Converter`)
                 .addFields({ name: "Description", value: `${message1}${first_ten}${message2}${first_ten}${message3}` })
                 .setColor(client.config.embedColor)
                 .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
             interaction.reply({ embeds: [epochCmdEmbed]});
         } else {
-            const command = client.slash.get(timeInt.toLowerCase());
+            const dateInt = client.slash.get(dateInt.toLowerCase());
 
-            // This is what it sends when using the command with argument and it does not find the command
-            if (!command) {
-                interaction.reply({ content: `There isn't any SlashCommand named "${timeInt}"` });
-            } else {
+            const message4 = "Please provide a time, date, and timezone to convert";
+            const message5 = "Please use !epoch HH:MM YYYY/MM/DD TIMEZONE";
 
                 // This is what it sends when using the command with argument and if it finds the command
-                let command = client.slash.get(timeInt.toLowerCase());
+                let command = client.slash.get(dateInt.toLowerCase());
                 let name = command.name;
-                let description = command.description || "No descrpition provided"
-                let usage = command.usage || "No usage provided"
+                let description = command.description || message4
+                let usage = command.usage || message5
                 let category = command.category || "No category provided!"
-
+    
                 let epochCmdEmbed = new client.discord.MessageEmbed()
-                    .setTitle(`${client.user.username} Epoch Time Converter Command`)
+                    .setTitle(`${client.user.username} Time Converter`)
                     .addFields(
                         { name: "Description", value: `${description}` },
                         { name: "Usage", value: `${usage}` })
                     .setColor(client.config.embedColor)
                     .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-                    interaction.reply({ embeds: [helpCmepochCmdEmbeddEmbed] });
-            }
+                    interaction.reply({ embeds: [epochCmdEmbed] });
+            
         }
     },
 };

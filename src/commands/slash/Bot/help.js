@@ -18,21 +18,6 @@ module.exports = {
     ownerOnly: false,
     run: async (client, interaction) => {
 
-        // Buttons that take you to a link
-        // If you want to delete them, remove this part of
-        // the code and in line: 62 delete ", components: [row]"
-        const row = new client.discord.MessageActionRow()
-            .addComponents(
-                new client.discord.MessageButton()
-                    .setLabel("GitHub")
-                    .setStyle("LINK")
-                    .setURL("http://github.com/Expectatives/Discord.js-v13-Example"),
-                new client.discord.MessageButton()
-                    .setLabel("Support")
-                    .setStyle("LINK")
-                    .setURL("http://dsc.gg/faithcommunity")
-            );
-
         const commandInt = interaction.options.getString("command");
         if (!commandInt) {
 
@@ -61,7 +46,7 @@ module.exports = {
                 .setColor(client.config.embedColor)
                 .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-            interaction.reply({ embeds: [helpEmbed], components: [row] });
+            interaction.reply({ embeds: [helpEmbed]});
         } else {
             const command = client.slash.get(commandInt.toLowerCase());
 
@@ -86,7 +71,7 @@ module.exports = {
                     .setColor(client.config.embedColor)
                     .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
-                interaction.reply({ embeds: [helpCmdEmbed] });
+                    interaction.reply({ embeds: [helpCmdEmbed] });
             }
         }
     },
