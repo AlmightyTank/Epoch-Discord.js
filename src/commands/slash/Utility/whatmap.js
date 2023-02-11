@@ -64,16 +64,17 @@ module.exports = {
                 maps.splice(index, 1);
 
                 const mapSG = maps.toString();
-
                 console.log(mapSG)
-                const mapsWB0 = mapSG.split(',').slice(0, 1);
-                const mapsWB1 = mapSG.split(',').slice(1, 2);
-                const mapsWB2 = mapSG.split(',').slice(2, 3);
-                const mapsWB3 = mapSG.split(',').slice(3, 4);
-                const mapsWB4 = mapSG.split(',').slice(4, 5);
-                const mapsWB5 = mapSG.split(',').slice(5, 6);
-                const mapsWB6 = mapSG.split(',').slice(6, 7);
-                const mapsWB7 = mapSG.split(',').slice(7, 8);
+                const mapsNS = mapSG.replace(/\s+/g, ' ').trim()
+
+                const mapsWB0 = mapsNS.split(',').slice(0, 1);
+                const mapsWB1 = mapsNS.split(',').slice(1, 2);
+                const mapsWB2 = mapsNS.split(',').slice(2, 3);
+                const mapsWB3 = mapsNS.split(',').slice(3, 4);
+                const mapsWB4 = mapsNS.split(',').slice(4, 5);
+                const mapsWB5 = mapsNS.split(',').slice(5, 6);
+                const mapsWB6 = mapsNS.split(',').slice(6, 7);
+                const mapsWB7 = mapsNS.split(',').slice(7, 8);
 
                 fs.writeFile(filePath, mapsWB0 + ('\n') + mapsWB1 + ('\n') + mapsWB2 + ('\n') + mapsWB3 + ('\n') + mapsWB4 + ('\n') + mapsWB5 + ('\n') + mapsWB6 + ('\n') + mapsWB7 + ('\n'), (err, data) => {
                     if (err) {
