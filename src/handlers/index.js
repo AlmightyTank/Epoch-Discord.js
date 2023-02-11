@@ -85,6 +85,8 @@ const loadSlashCommands = async function (client) {
     }
 
     client.on("ready", async() => {
+
+        let maps = [''];
         // Register Slash Commands for a single guild
         // await client.guilds.cache
         //    .get("YOUR_GUILD_ID")
