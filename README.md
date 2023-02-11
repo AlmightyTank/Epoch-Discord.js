@@ -29,7 +29,7 @@
 	</a>˙ -->
 	<a href="./../../commits/">
 		<img alt="[Last Commit]"
-		src="http://img.shields.io/github/last-commit/Expectatives/Discord.js-v13-Example"/>
+		src="https://img.shields.io/github/last-commit/ChrisYoungPlus/Epoch-Discord.js"/>
 	</a>
 </p>
 
