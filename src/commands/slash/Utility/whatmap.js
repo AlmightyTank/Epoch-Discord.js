@@ -23,7 +23,7 @@ fs.readFile(filePath, 'utf-8', (err, data) => {
 module.exports = {
     name: "whatmap",
     aliases: ["whatmap", "roulette"],
-    usage: '/whatmap <command>',
+    usage: '/whatmap <add,rm,roulette,list>',
     category: "Utility",
     description: "To help select maps for indecisive people!",
     ownerOnly: false,
