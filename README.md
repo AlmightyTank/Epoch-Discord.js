@@ -2,7 +2,7 @@
 
 <p align="center">
 	<h2 align="center">
-		<a href="http://github.com/Expectatives/Discord.js-v13-Example">Discord.js v13 Example Bot</a>
+		<a href="https://github.com/ChrisYoungPlus/Epoch-Discord.js">EpochBot by AlmightyTank</a>
 	</h2>
 </p>
 
