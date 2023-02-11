@@ -3,7 +3,7 @@
 
 [Back]
 
-> Guide to contributing to [Expectatives/Discord.js-v13-Example](http://github.com/Expectatives/Discord.js-v13-Example) repo.
+> Guide to contributing to [ChrisYoungPlus/Epoch-Discord.js](https://github.com/ChrisYoungPlus/Epoch-Discord.js) repo.
 
 ### Table of content
 - [CONTRIBUTING](#contributing)
@@ -27,5 +27,5 @@ Do not add any of the following in a Pull Request or risk getting the PR closed:
 ---
 
 [Back]: ../README.md
-[Pull Requests (PR is short)]: http://github.com/Expectatives/Discord.js-v13-Example/pulls
+[Pull Requests (PR is short)]: https://github.com/ChrisYoungPlus/Epoch-Discord.js/pulls
 [Terms of Service (ToS is short)]: http://github.com/site/terms
