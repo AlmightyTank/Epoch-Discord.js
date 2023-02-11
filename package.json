@@ -19,7 +19,8 @@
     "fs": "^0.0.1-security",
     "glob": "^7.2.0",
     "moment": "^2.29.4",
-    "moment-timezone": "^0.5.40"
+    "moment-timezone": "^0.5.40",
+    "nodemon": "^2.0.20"
   },
   "repository": {
     "type": "git",
@@ -28,6 +29,5 @@
   "bugs": {
     "url": "https://github.com/ChrisYoungPlus/Epoch-Discord.js/issues"
   },
-  "homepage": "https://github.com/ChrisYoungPlus/Epoch-Discord.js#readme",
-  "devDependencies": {}
+  "homepage": "https://github.com/ChrisYoungPlus/Epoch-Discord.js#readme"
 }
