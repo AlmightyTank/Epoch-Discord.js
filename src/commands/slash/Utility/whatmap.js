@@ -58,31 +58,35 @@ module.exports = {
                 if (!index === -1) {
                     return interaction.reply({content : `Map ${mapToRemove} not found`, ephemeral: true });
                 }
-
-                console.log(mapToRemove)
-                // Remove the map from the array
-                maps.splice(index, 1);
-
-                const mapSG = maps.toString();
-                console.log(mapSG)
-                const mapsNS = mapSG.replace(/\s+/g, ' ').trim()
-
-                const mapsWB0 = mapsNS.split(',').slice(0, 1);
-                const mapsWB1 = mapsNS.split(',').slice(1, 2);
-                const mapsWB2 = mapsNS.split(',').slice(2, 3);
-                const mapsWB3 = mapsNS.split(',').slice(3, 4);
-                const mapsWB4 = mapsNS.split(',').slice(4, 5);
-                const mapsWB5 = mapsNS.split(',').slice(5, 6);
-                const mapsWB6 = mapsNS.split(',').slice(6, 7);
-                const mapsWB7 = mapsNS.split(',').slice(7, 8);
-
-                fs.writeFile(filePath, mapsWB0 + ('\n') + mapsWB1 + ('\n') + mapsWB2 + ('\n') + mapsWB3 + ('\n') + mapsWB4 + ('\n') + mapsWB5 + ('\n') + mapsWB6 + ('\n') + mapsWB7 + ('\n'), (err, data) => {
-                    if (err) {
-                        console.error(err);
-                        return;
-                    } 
-                    interaction.reply({content : `Removed ${mapToRemove} from the map list`, ephemeral: true });
-                });
+                const isMatch = maps.includes(mapToRemove);
+                if (isMatch) {
+                    console.log(mapToRemove)
+                    // Remove the map from the array
+                    maps.splice(index, 1);
+    
+                    const mapSG = maps.toString();
+                    console.log(mapSG)
+                    const mapsNS = mapSG.replace(/\s+/g, ' ').trim()
+    
+                    const mapsWB0 = mapsNS.split(',').slice(0, 1);
+                    const mapsWB1 = mapsNS.split(',').slice(1, 2);
+                    const mapsWB2 = mapsNS.split(',').slice(2, 3);
+                    const mapsWB3 = mapsNS.split(',').slice(3, 4);
+                    const mapsWB4 = mapsNS.split(',').slice(4, 5);
+                    const mapsWB5 = mapsNS.split(',').slice(5, 6);
+                    const mapsWB6 = mapsNS.split(',').slice(6, 7);
+                    const mapsWB7 = mapsNS.split(',').slice(7, 8);
+    
+                    fs.writeFile(filePath, mapsWB0 + ('\n') + mapsWB1 + ('\n') + mapsWB2 + ('\n') + mapsWB3 + ('\n') + mapsWB4 + ('\n') + mapsWB5 + ('\n') + mapsWB6 + ('\n') + mapsWB7 + ('\n'), (err, data) => {
+                        if (err) {
+                            console.error(err);
+                            return;
+                        } 
+                        interaction.reply({content : `Removed ${mapToRemove} from the map list`, ephemeral: true });
+                    });
+                } else {
+                    return interaction.reply({content : `Map ${mapToRemove} not found`, ephemeral: true });
+                }
             } else if (commandInt === 'addmap' || commandInt === 'am'|| commandInt === 'ad' || commandInt === 'add') {
                 const mapInt = mapIntUpper.toLowerCase();
                 if (maps.length >= maxMaps) {
