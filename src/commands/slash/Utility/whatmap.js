@@ -202,7 +202,7 @@ module.exports = {
                         interaction.reply({content : `${mapInt} is already on the map list`, ephemeral: true });
                     }
                 }              
-            } else if (commandInt === 'roulette' || commandInt === 'r') {
+            } else if (commandInt === 'roulette' || commandInt === 'r' || commandInt === 'roll' || commandInt === 'spin') {
                 // Check if there are any maps stored
                 if (maps.length === 0) {
                     return interaction.reply({content : `No maps found. Use the addmap command to add maps`, ephemeral: true });
@@ -210,7 +210,7 @@ module.exports = {
                 // Select a random map from the array
                 const selectedMap = maps[Math.floor(Math.random() * maps.length)];
                 interaction.reply(`The selected map is: ${selectedMap}`);
-            } else if (commandInt === 'maps' || commandInt === 'ms' || commandInt=== 'list') {
+            } else if (commandInt === 'maps' || commandInt === 'ms' || commandInt=== 'list' || commandInt === 'l') {
                 // Check if there are any maps stored
                 if (maps.length === 0) {
                     return interaction.reply({content : `No maps found. Use the addmap command to add maps`, ephemeral: true });
@@ -241,7 +241,7 @@ module.exports = {
                 let category = command.category || "No category provided!"
     
                 let whatmapCmdEmbed = new client.discord.MessageEmbed()
-                    .setTitle(`${client.user.username} Time Converter`)
+                    .setTitle(`${client.user.username} Map Selector`)
                     .addFields(
                         { name: "Description", value: `${description}` },
                         { name: "Usage", value: `${usage}` })
