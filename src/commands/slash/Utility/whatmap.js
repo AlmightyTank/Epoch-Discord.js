@@ -58,8 +58,8 @@ module.exports = {
                 if (!index === -1) {
                     return interaction.reply({content : `Map ${mapToRemove} not found`, ephemeral: true });
                 }
-                const isMatch = maps.includes(mapToRemove);
-                if (isMatch) {
+                const isMatchRM = maps.includes(mapToRemove);
+                if (isMatchRM) {
                     console.log(mapToRemove)
                     // Remove the map from the array
                     maps.splice(index, 1);
@@ -92,7 +92,7 @@ module.exports = {
                 if (maps.length >= maxMaps) {
                     return interaction.reply(`Can only have ${maxMaps} maps stored at a time`);
                 } else if (!mapInt==null || !mapInt==""){
-                    const isMatch = maps.includes(mapInt);
+                    const isMatchAD = maps.includes(mapInt);
                     const mapsToAdd0 = mapInt.split(' ').slice(0, 1);
                     const mapsToAdd1 = mapInt.split(' ').slice(1, 2);
                     const mapsToAdd2 = mapInt.split(' ').slice(2, 3);
@@ -104,7 +104,7 @@ module.exports = {
 
                     console.log(mapInt)
 
-                    if(!isMatch) {
+                    if(!isMatchAD) {
                         if (mapsToAdd0 == 'shoreline' || mapsToAdd0 == 'customs' || mapsToAdd0== 'reserve' || mapsToAdd0== 'lighthouse' || mapsToAdd0== 'streets' || mapsToAdd0== 'interchange' || mapsToAdd0=='woods' || mapsToAdd0=='factory') {
                             interaction.reply({content : `Adding ${mapInt} to the map list`, ephemeral: true });
     
