@@ -28,7 +28,6 @@ const client = new Client({
     ],
 });
 
-
 // Call .env file to get Token
 require('dotenv').config();
 
@@ -57,4 +56,3 @@ process.on("unhandledRejection", (reason, promise) => {
 
 // Login Discord Bot Token
 client.login(process.env.TOKEN);
-

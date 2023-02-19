@@ -20,7 +20,9 @@
     "glob": "^7.2.0",
     "moment": "^2.29.4",
     "moment-timezone": "^0.5.40",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "react-aad-msal": "^2.3.5",
+    "twitch": "^4.6.7"
   },
   "repository": {
     "type": "git",
