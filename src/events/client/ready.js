@@ -11,7 +11,7 @@ const streamers = [
     },
     {
       name: 'streamer2',
-      twitch_username: 'duskyreaper07',
+      twitch_username: 'toastracktv',
       live: false,
     },
     {
@@ -21,7 +21,17 @@ const streamers = [
     },
     {
       name: 'streamer4',
-      twitch_username: 'toastracktv',
+      twitch_username: 'pestily',
+      live: false,
+    },
+    {
+      name: 'streamer5',
+      twitch_username: 'duskyreaper07',
+      live: false,
+    },
+    {
+      name: 'streamer6',
+      twitch_username: 'airwingmarine',
       live: false,
     },
   ];
@@ -104,7 +114,6 @@ module.exports = {
                     //client.user.setActivity(`${streamers} is live!`, { type: "STREAMING", url: streamURL });
                     client.user.setActivity(`${streamers} is live!`, {
                         type: "STREAMING",
-                        name: `${streamers} is live!`,
                         url: streamURL
                     });
                     client.user.setStatus("online");
@@ -129,6 +138,6 @@ module.exports = {
                     updateStatus(streamers.twitch_username);
                 }, 60000 * i);
             });
-        }, 300000); 
+        }, 420000); 
     }
 }
