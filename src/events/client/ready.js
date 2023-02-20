@@ -21,7 +21,7 @@ const streamers = [
     },
     {
       name: 'streamer4',
-      twitch_username: 'pestily',
+      twitch_username: 'verybadscav',
       live: false,
     },
     {
@@ -85,7 +85,27 @@ module.exports = {
                 console.error(`[ERROR] Error getting Twitch API token: ${error}`);
               });
         }
-  
+
+        // List of Activity that are picked at random when no one is live
+        const list = [
+          { name: 'AlMightyTank#6286', number: 3 },
+          { name: 'Myself get Lost', number: 3 },
+          { name: 'to Word of Wisdom', number: 2 },
+          { name: 'with Tornados', number: 0 },
+        ];
+        
+        // Define a function that picks a random element from the list, along with its number
+        function pickRandomFromList(list) {
+          const randomIndex = Math.floor(Math.random() * list.length);
+          const randomElement = list[randomIndex];
+          return { name: randomElement.name, number: randomElement.number };
+        }
+        
+        // Define a function that exports the results to the console
+        function exportToStatus(element) {
+          console.log(`The bot picked "${element.name}".`);
+        }
+         
         function updateStatus(streamers) {
             const url = `${twitchAPIEndpoint}/helix/streams?user_login=${streamers}`;
             const options = {
@@ -104,7 +124,7 @@ module.exports = {
                   return response.json();
                 }
               })
-              .then(async data => {
+              .then(data => {
                 const isLive = data.data.length > 0;
                 if (isLive) {
                     const streamData = data.data[0];
@@ -112,14 +132,16 @@ module.exports = {
                     const streamGame = streamData.game_name;
                     const streamURL = `https://www.twitch.tv/${streamers}`;
                     //client.user.setActivity(`${streamers} is live!`, { type: "STREAMING", url: streamURL });
-                    client.user.setActivity(`${streamers} is live!`, {
+                    client.user.setActivity(`${streamers} playing ${streamGame}!`, {
                         type: "STREAMING",
                         url: streamURL
                     });
                     client.user.setStatus("online");
                     console.log(`[LOG] ${streamers} is live`)
                 } else {
-                    client.user.setActivity(`AlMightyTank#6286`, { type: "WATCHING"});
+                    const randomElement = pickRandomFromList(list);
+                    exportToStatus(randomElement);
+                    client.user.setActivity(`${randomElement.name}`, { type: randomElement.number});
                     client.user.setStatus("online");
                     console.log(`[LOG] ${streamers} is not live`)
                 }
