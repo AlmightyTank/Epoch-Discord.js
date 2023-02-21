@@ -6,32 +6,32 @@ const twitchAPIEndpoint = 'https://api.twitch.tv';
 const streamers = [
     {
       name: 'streamer1',
-      twitch_username: 'bakedbackhouse',
+      twitch_username: 'BakedBackHouse',
       live: false,
     },
     {
       name: 'streamer2',
-      twitch_username: 'toastracktv',
+      twitch_username: 'ToastRackTV',
       live: false,
     },
     {
       name: 'streamer3',
-      twitch_username: 'almightytank',
+      twitch_username: 'AlmightyTank',
       live: false,
     },
     {
       name: 'streamer4',
-      twitch_username: 'verybadscav',
+      twitch_username: 'VeryBadScav',
       live: false,
     },
     {
       name: 'streamer5',
-      twitch_username: 'duskyreaper07',
+      twitch_username: 'DuskyReaper07',
       live: false,
     },
     {
       name: 'streamer6',
-      twitch_username: 'airwingmarine',
+      twitch_username: 'AirWingMarine',
       live: false,
     },
   ];
@@ -90,7 +90,7 @@ module.exports = {
         const list = [
           { name: 'AlMightyTank#6286', number: 3 },
           { name: 'Myself get Lost', number: 3 },
-          { name: 'to Word of Wisdom', number: 2 },
+          { name: 'Word of Wisdom', number: 2 },
           { name: 'with Tornados', number: 0 },
         ];
         
@@ -100,14 +100,9 @@ module.exports = {
           const randomElement = list[randomIndex];
           return { name: randomElement.name, number: randomElement.number };
         }
-        
-        // Define a function that exports the results to the console
-        function exportToStatus(element) {
-          console.log(`The bot picked "${element.name}".`);
-        }
          
         function updateStatus(streamers) {
-            const url = `${twitchAPIEndpoint}/helix/streams?user_login=${streamers}`;
+            const url = `${twitchAPIEndpoint}/helix/streams?user_login=${streamers.toLowerCase()}`;
             const options = {
               method: 'GET',
               headers: {
@@ -130,7 +125,7 @@ module.exports = {
                     const streamData = data.data[0];
                     const streamTitle = streamData.title;
                     const streamGame = streamData.game_name;
-                    const streamURL = `https://www.twitch.tv/${streamers}`;
+                    const streamURL = `https://www.twitch.tv/${streamers.toLowerCase()}`;
                     //client.user.setActivity(`${streamers} is live!`, { type: "STREAMING", url: streamURL });
                     client.user.setActivity(`${streamers} playing ${streamGame}!`, {
                         type: "STREAMING",
@@ -140,10 +135,9 @@ module.exports = {
                     console.log(`[LOG] ${streamers} is live`)
                 } else {
                     const randomElement = pickRandomFromList(list);
-                    exportToStatus(randomElement);
                     client.user.setActivity(`${randomElement.name}`, { type: randomElement.number});
                     client.user.setStatus("online");
-                    console.log(`[LOG] ${streamers} is not live`)
+                    console.log(`[LOG] ${streamers} is not live and picked ${randomElement.name}`)
                 }
               })
               .catch(error => {

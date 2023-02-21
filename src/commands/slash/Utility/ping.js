@@ -10,8 +10,10 @@ module.exports = {
 
         const pingEmbed = new client.discord.MessageEmbed()
             .setTitle(':signal_strength: Bot Ping')
-            .addFields("Time", `${Math.floor(msg.createdAt - interaction.createdAt)}ms`, true)
-            .addFields("API Ping", `${client.ws.ping}ms`, true)
+            //.addField("Time", `${Math.floor(msg.createdAt - interaction.createdAt)}ms`, true)
+            .addFields({ name: 'Time', value: `${Math.floor(msg.createdAt - interaction.createdAt)}ms`, inline: true })
+            //.addField("API Ping", `${client.ws.ping}ms`, true)
+            .addFields({ name: 'API Ping', value: `${client.ws.ping}ms`, inline: true })
             .setColor(client.config.embedColor)
             .setFooter({ text: `${client.config.embedfooterText}`, iconURL: `${client.user.displayAvatarURL()}` });
 
