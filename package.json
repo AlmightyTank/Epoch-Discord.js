@@ -26,10 +26,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ChrisYoungPlus/Epoch-Discord.js.git"
+    "url": "git+https://github.com/AlmightyTank/Epoch-Discord.js.git"
   },
   "bugs": {
-    "url": "https://github.com/ChrisYoungPlus/Epoch-Discord.js/issues"
+    "url": "https://github.com/AlmightyTank/Epoch-Discord.js/issues"
   },
-  "homepage": "https://github.com/ChrisYoungPlus/Epoch-Discord.js#readme"
+  "homepage": "https://github.com/AlmightyTank/Epoch-Discord.js#readme"
 }
